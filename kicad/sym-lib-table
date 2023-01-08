@@ -1,4 +1,5 @@
 (sym_lib_table
-  (lib (name kinx-eagle-import)(type Legacy)(uri ${KIPRJMOD}/kinx-eagle-import.lib)(options "")(descr ""))
-  (lib (name molex-39-53-2135)(type Legacy)(uri ${KIPRJMOD}/TODO-recreate-molex-39-53-2135/39-53-2135.lib)(options "")(descr ""))
+  (lib (name "kinx-eagle-import")(type "Legacy")(uri "${KIPRJMOD}/kinx-eagle-import.lib")(options "")(descr ""))
+  (lib (name "molex-39-53-2135")(type "Legacy")(uri "${KIPRJMOD}/TODO-recreate-molex-39-53-2135/39-53-2135.lib")(options "")(descr ""))
+  (lib (name "kintqt")(type "KiCad")(uri "${KIPRJMOD}/kintqt.kicad_sym")(options "")(descr ""))
 )
