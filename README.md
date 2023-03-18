@@ -28,7 +28,7 @@ See also:
 3D render (back, components)
 </td>
 <td width="33%">
-<a href="https://github.com/bgould/kint-qt/blob/main/schematic-v2021-06-26.pdf"><img
+<a href="https://github.com/bgould/kint-qt/blob/main/schematic-v2023-03-18.pdf"><img
 src="https://github.com/bgould/kint-qt/raw/main/thumbnail-schematic-v2023-03-18.jpg"></a>
 schematic
 </td>
