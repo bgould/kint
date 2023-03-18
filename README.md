@@ -47,7 +47,7 @@ photos](https://photos.app.goo.gl/BwgzHgaTz1RKBjqc6)).
 
 The kinT keyboard controller is also not compatible with **very old Advantage**
 keyboards, where the left and right keywell circuit boards plug directly into
-the controller. See [issue #42](https://github.com/bgould/kint-qt/issues/42)
+the controller. See [issue #42](https://github.com/kinx-project/kint/issues/42)
 for details and pictures.
 
 ## Building your own kinT keyboard controller
