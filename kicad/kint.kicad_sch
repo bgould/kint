@@ -1462,7 +1462,6 @@
     )
   )
 
-
   (junction (at 158.115 35.56) (diameter 0) (color 0 0 0 0)
     (uuid 0fa54343-2ce7-46fc-b5ad-560518d13e96)
   )
@@ -2911,7 +2910,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 8e712040-0bac-4e9a-b70e-59cc57f69441)
   )
-  (label "D+" (at 82.55 115.57 0)
+  (label "D-" (at 82.55 115.57 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 97b3347c-1b48-48e8-89c4-f679d096ab65)
   )
@@ -3031,7 +3030,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid cbd8faed-e1f8-4406-87c8-58b2c504a5d4)
   )
-  (label "D-" (at 82.55 118.11 0)
+  (label "D+" (at 82.55 118.11 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid cc085052-eafb-4d9e-9028-1e1d080219fa)
   )
