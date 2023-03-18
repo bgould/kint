@@ -20,11 +20,11 @@ See also:
 <table border="0" width="100%">
 <tr>
 <td width="33%">
-<img src="https://github.com/bgould/kint-qt/raw/main/pcb-3d-render-front-v2021-06-26.png">
+<img src="https://github.com/bgould/kint-qt/raw/main/pcb-3d-render-front-v2023-03-18.png">
 3D render (front, LEDs)
 </td>
 <td width="33%">
-<img src="https://github.com/bgould/kint-qt/raw/main/pcb-3d-render-back-v2021-06-26.png">
+<img src="https://github.com/bgould/kint-qt/raw/main/pcb-3d-render-back-v2023-03-18.png">
 3D render (back, components)
 </td>
 <td width="33%">
