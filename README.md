@@ -1,5 +1,5 @@
 
-<img src="kb2040_kinesis_controller.jpg" width="362" height="289" align="right">
+<img src="https://github.com/bgould/kint-qt/raw/main/kb2040_kinesis_controller.jpg" width="362" height="289" align="right">
 
 The kinT keyboard controller is a replacement for your Kinesis Advantage or
 Advantage 2 ergonomic keyboards.
@@ -20,16 +20,16 @@ See also:
 <table border="0" width="100%">
 <tr>
 <td width="33%">
-<img src="https://github.com/kinx-project/kint/raw/main/pcb-3d-render-front-v2021-06-26.png">
+<img src="https://github.com/bgould/kint-qt/raw/main/pcb-3d-render-front-v2021-06-26.png">
 3D render (front, LEDs)
 </td>
 <td width="33%">
-<img src="https://github.com/kinx-project/kint/raw/main/pcb-3d-render-back-v2021-06-26.png">
+<img src="https://github.com/bgould/kint-qt/raw/main/pcb-3d-render-back-v2021-06-26.png">
 3D render (back, components)
 </td>
 <td width="33%">
-<a href="https://github.com/kinx-project/kint/blob/main/schematic-v2021-06-26.pdf"><img
-src="https://github.com/kinx-project/kint/raw/main/thumbnail-schematic-v2021-06-26.jpg"></a>
+<a href="https://github.com/bgould/kint-qt/blob/main/schematic-v2021-06-26.pdf"><img
+src="https://github.com/bgould/kint-qt/raw/main/thumbnail-schematic-v2023-03-18.jpg"></a>
 schematic
 </td>
 </tr>
@@ -47,13 +47,13 @@ photos](https://photos.app.goo.gl/BwgzHgaTz1RKBjqc6)).
 
 The kinT keyboard controller is also not compatible with **very old Advantage**
 keyboards, where the left and right keywell circuit boards plug directly into
-the controller. See [issue #42](https://github.com/kinx-project/kint/issues/42)
+the controller. See [issue #42](https://github.com/bgould/kint-qt/issues/42)
 for details and pictures.
 
 ## Building your own kinT keyboard controller
 
 1. Follow [“Buying the board and components (Bill of
-   materials)”](https://github.com/kinx-project/kint#buying-the-board-and-components-bill-of-materials). When
+   materials)”](https://github.com/bgould/kint-qt#buying-the-board-and-components-bill-of-materials). When
    ordering from OSH Park (board) and Digi-Key (components), you’ll get the
    minimum quantity of 3 boards for 72 USD (24 USD per board), and one set of
    components for 49 USD.
@@ -70,10 +70,10 @@ for details and pictures.
    longer you are willing to wait, the cheaper it is going to get.
 
 1. Follow [the soldering
-   guide](https://github.com/kinx-project/kint#soldering). This will take about
+   guide](https://github.com/bgould/kint-qt#soldering). This will take about
    an hour.
 
-1. [Install the firmware](https://github.com/kinx-project/kint#installing-the-firmware)
+1. [Install the firmware](https://github.com/bgould/kint-qt#installing-the-firmware)
 
 ## Installing the kinT replacement controller in your Kinesis keyboard
 
@@ -113,10 +113,10 @@ the kinX hub.
    * cheaper: 72 USD for 3 boards at oshpark, instead of 81 USD.
 
 * The kinT silkscreen
-  ([front](https://raw.githubusercontent.com/kinx-project/kint/44e6c8be96a0e1e13ada5eafdeba8c51a2d6c9e8/pcb-3d-render-front-v2020-06-23.png),
-  [back](https://raw.githubusercontent.com/kinx-project/kint/44e6c8be96a0e1e13ada5eafdeba8c51a2d6c9e8/pcb-3d-render-back-v2020-06-23.png))
+  ([front](https://raw.githubusercontent.com/bgould/kint-qt/44e6c8be96a0e1e13ada5eafdeba8c51a2d6c9e8/pcb-3d-render-front-v2020-06-23.png),
+  [back](https://raw.githubusercontent.com/bgould/kint-qt/44e6c8be96a0e1e13ada5eafdeba8c51a2d6c9e8/pcb-3d-render-back-v2020-06-23.png))
   and
-  [schematic](https://github.com/kinx-project/kint/blob/44e6c8be96a0e1e13ada5eafdeba8c51a2d6c9e8/schematic-v2020-06-23.pdf)
+  [schematic](https://github.com/bgould/kint-qt/blob/44e6c8be96a0e1e13ada5eafdeba8c51a2d6c9e8/schematic-v2020-06-23.pdf)
   are much much clearer, making assembly a breeze.
 
 * The kinT is a good starting point for your own project:
@@ -156,7 +156,7 @@ Which Teensy should you buy for your build? Here are a few considerations:
 
 * If you are an advanced user of the QMK firmware, note that despite QMK working
   on the Teensy 3.6, [some features are not yet
-  ported/working](https://github.com/kinx-project/kint/issues/10). As QMK was
+  ported/working](https://github.com/bgould/kint-qt/issues/10). As QMK was
   originally made for AVR micro controllers, you will likely find best overall
   QMK feature availability with the older Teensy++ 2.0.
 
@@ -170,8 +170,8 @@ TODO: add power consumption as a column. relevant for using the keyboard with a 
 | ~~teensy 3.0~~ | no   |        |               | 48 MHz M4   | MK20DX128   | untested                                                              |
 | ~~teensy 3.1~~ | no   |        |               |             | MK20DX256   | untested                                                              |
 | teensy LC      | no   | $11.65 | ?             | 48 MHz M0+  |             | [development version](https://github.com/qmk/qmk_firmware/pull/17301) |
-| teensy 3.2     | no   | $19.80 | ?             | 72 MHz M4   |             | unlikely ([interest?](https://github.com/kinx-project/kint/issues/2)) |
-| teensy 3.5     | yes  | $24.25 | ?             | 120 MHz M4F | MK64FX      | unlikely ([interest?](https://github.com/kinx-project/kint/issues/3)) |
+| teensy 3.2     | no   | $19.80 | ?             | 72 MHz M4   |             | unlikely ([interest?](https://github.com/bgould/kint-qt/issues/2)) |
+| teensy 3.5     | yes  | $24.25 | ?             | 120 MHz M4F | MK64FX      | unlikely ([interest?](https://github.com/bgould/kint-qt/issues/3)) |
 | teensy 3.6     | yes  | $29.25 | 1.97ms        | 180 MHz M4F | MK66FX      | 0.14.0 or newer                                                       |
 | teensy 4.0     | no   | $19.95 | 0.9ms         | 600 MHz M7  | MIMXRT1062  | 0.14.0 or newer                                                       |
 | teensy 4.1     | yes  | $26.85 | 0.9ms         | 600 MHz M7  | MIMXRT1062  | 0.14.0 or newer                                                       |
@@ -185,9 +185,9 @@ To buy the board, you can:
 
 * [order the kinT controller from OSH Park](https://oshpark.com/shared_projects/YSZAuKc0) starting at 72 USD
 * [order the kinT controller from Aisler](https://aisler.net/p/JQIIIJSL) starting at 18 EUR
-* [order the kinT controller from JLCPCB](https://github.com/kinx-project/kint/tree/main/gerbers/jlcpcb)
+* [order the kinT controller from JLCPCB](https://github.com/bgould/kint-qt/tree/main/gerbers/jlcpcb)
 * or upload the [kint.kicad_pcb
-  file](https://github.com/kinx-project/kint/blob/main/kicad/kint.kicad_pcb)
+  file](https://github.com/bgould/kint-qt/blob/main/kicad/kint.kicad_pcb)
   to the manufacturing service you prefer.
 
 To buy the components, check out the [kinT BOM in the Octopart BOM
@@ -319,9 +319,9 @@ your self-compiled firmware.
 
 | Teensy           | QMK Configurator                                                                                                                                         | pre-built, tested firmware                                                                                                              |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Teensy++ 2.0     | [QMK Configurator (kint2pp)](https://config.qmk.fm/#/kinesis/kint2pp/LAYOUT)                                                                             | [kinesis_kint2pp_default.hex](https://github.com/kinx-project/kint/blob/main/default-firmware/kinesis_kint2pp_default.hex) (2020-07-09) |
-| Teensy 3.6       | [QMK Configurator (kint36)](https://config.qmk.fm/#/kinesis/kint36/LAYOUT)                                                                               | [kinesis_kint36_default.hex](https://github.com/kinx-project/kint/blob/main/default-firmware/kinesis_kint36_default.hex) (2020-07-09)   |
-| Teensy 4.0 / 4.1 | <s>[QMK Configurator (kint41)](https://config.qmk.fm/#/kinesis/kint41/LAYOUT)</s> (currently [broken](https://github.com/qmk/qmk_firmware/issues/16440)) | [kinesis_kint41_default.hex](https://github.com/kinx-project/kint/blob/main/default-firmware/kinesis_kint41_default.hex) (QMK 0.17.9)   |
+| Teensy++ 2.0     | [QMK Configurator (kint2pp)](https://config.qmk.fm/#/kinesis/kint2pp/LAYOUT)                                                                             | [kinesis_kint2pp_default.hex](https://github.com/bgould/kint-qt/blob/main/default-firmware/kinesis_kint2pp_default.hex) (2020-07-09) |
+| Teensy 3.6       | [QMK Configurator (kint36)](https://config.qmk.fm/#/kinesis/kint36/LAYOUT)                                                                               | [kinesis_kint36_default.hex](https://github.com/bgould/kint-qt/blob/main/default-firmware/kinesis_kint36_default.hex) (2020-07-09)   |
+| Teensy 4.0 / 4.1 | <s>[QMK Configurator (kint41)](https://config.qmk.fm/#/kinesis/kint41/LAYOUT)</s> (currently [broken](https://github.com/qmk/qmk_firmware/issues/16440)) | [kinesis_kint41_default.hex](https://github.com/bgould/kint-qt/blob/main/default-firmware/kinesis_kint41_default.hex) (QMK 0.17.9)   |
 
 You can install these .hex files with the [Teensy
 Loader](https://www.pjrc.com/teensy/loader.html).
@@ -336,7 +336,7 @@ the QMK branch to work with.
 ### General technique: highlight connections in KiCad
 
 1. Install [KiCad](https://kicad.org/) (free and open source)
-1. Clone https://github.com/kinx-project/kint/ and open `kicad/kint.pro` in KiCad
+1. Clone https://github.com/bgould/kint-qt/ and open `kicad/kint.pro` in KiCad
 1. Select `Tools` → `Edit PCB`
 1. Select `View` → `Flip Board View`, because the front side of kinT contains the LEDs, the back side contains the connectors.
 1. Select `Highlight Net`, the second icon from the top in the right icon bar.
@@ -345,7 +345,7 @@ the QMK branch to work with.
 
 ### Issue: LEDs not working
 
-See also [Example issue #13](https://github.com/kinx-project/kint/issues/13) for
+See also [Example issue #13](https://github.com/bgould/kint-qt/issues/13) for
 a full debugging walk-through.
 
 * Check the orientation of your LEDs, as they are directional parts.
@@ -375,5 +375,5 @@ a full debugging walk-through.
 
 ### Issue: Keys not working
 
-See also [Example issue #16](https://github.com/kinx-project/kint/issues/16) for
+See also [Example issue #16](https://github.com/bgould/kint-qt/issues/16) for
 a full debugging walk-through.

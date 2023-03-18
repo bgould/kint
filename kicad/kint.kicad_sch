@@ -5,10 +5,10 @@
   (paper "A4")
 
   (title_block
-    (title "kinT keyboard controller")
+    (title "kinT-QT keyboard controller")
     (date "2021-06-26")
-    (company "Michael Stapelberg")
-    (comment 1 "https://github.com/kinx-project/kint")
+    (company "Benjamin Gould")
+    (comment 1 "https://github.com/bgould/kint-qt")
   )
 
   (lib_symbols
