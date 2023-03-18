@@ -1,6 +1,5 @@
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/) [![Buy PCB: Oshpark](https://img.shields.io/badge/Buy%20PCB-Oshpark-purple.svg)](https://oshpark.com/shared_projects/YSZAuKc0) [![Buy Parts: Oshpark](https://img.shields.io/badge/Buy%20Parts-Octopart-3a6a99)](https://octopart.com/bom-tool/4AnOAR3f)
 
-<img src="https://github.com/kinx-project/kint/raw/main/replaced-controller-v2020-06-30.jpg" width="267" height="200" align="right">
+<img src="kb2040_kinesis_controller.jpg" width="362" height="289" align="right">
 
 The kinT keyboard controller is a replacement for your Kinesis Advantage or
 Advantage 2 ergonomic keyboards.
