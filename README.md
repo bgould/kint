@@ -5,17 +5,19 @@ The kinT-QT keyboard controller is a replacement for your Kinesis Advantage or
 Advantage 2 ergonomic keyboards.
 
 It is based on the [kin-T controller](https://github.com/kinx-project/kint)
-designed by Michael Stapelberg, which is based on the line of Teensy
+designed by Michael Stapelberg, which utilizes the line of Teensy
 microcontrollers from PJRC.
 
-kinT-QT is designed to be microcontroller-agnostic by wiring the matrix and
+kinT-QT is designed to be microcontroller-agnostic ... the matrix and
 indicator LEDs to a pair of MCP23017 port expanders that are accessible via I2C,
-so all of the functionality of the keyboard can be controlled with 2 digital pins.
+so all of the functionality of the keyboard can be controlled by most microcontrollers
+with 2 digital pins.
 
-The board has footprints for [Adafruit Feather](https://www.adafruit.com/category/946)
+The PCB has footprints for [Adafruit Feather](https://www.adafruit.com/category/946)
 boards, as well as for [Adafruit KB2040](https://adafru.it/5302) and other Pro Micro
-compatible boards.
-
+compatibles. Connections from the microcontroller footprint to the I2C bus and
+USB cable are configurable by solder jumpers, and plenty of extra prototyping space
+is provided to allow for maximum flexibility.
 
 ## Quick overview
 
@@ -92,94 +94,13 @@ Another way is to cut open a USB cable and solder it onto the matching pins of
 the Kinesis cable.  You can confirm the pinout in the hardware design files for
 the kinX hub.
 
-## Why use the kinT instead of the older replacement board?
-
-* The kinT supports both, the older Kinesis Advantage (KB500) **and** the newer
-  Kinesis Advantage 2 (KB600) keyboards. They differ in how the thumb pads are
-  connected. See the soldering instructions below.
-
-   * NOTE: If this is the *only* feature you’re interested in, and you already
-     have a custom keyboard controller for your older Kinesis, [check out the
-     u6w5 adapter
-     board](https://github.com/kinx-project/adapter-use-kb600-with-kb500-controller)
-     I made!
-
-* The kinT is made for the newer Teensy 3.x and 4.x series, which will remain
-  widely available for years to come, whereas the [Teensy++ 2.0 is
-  discontinued](https://www.pjrc.com/store/teensypp.html).
-
-* The kinT is a smaller PCB (4.25 x 3.39 inches, or 108.0 x 86.1 mm), which makes it:
-
-   * more compact: can be inserted/removed without having to unscrew a key well.
-
-   * cheaper: 72 USD for 3 boards at oshpark, instead of 81 USD.
-
-* The kinT silkscreen
-  ([front](https://raw.githubusercontent.com/bgould/kint-qt/44e6c8be96a0e1e13ada5eafdeba8c51a2d6c9e8/pcb-3d-render-front-v2020-06-23.png),
-  [back](https://raw.githubusercontent.com/bgould/kint-qt/44e6c8be96a0e1e13ada5eafdeba8c51a2d6c9e8/pcb-3d-render-back-v2020-06-23.png))
-  and
-  [schematic](https://github.com/bgould/kint-qt/blob/44e6c8be96a0e1e13ada5eafdeba8c51a2d6c9e8/schematic-v2020-06-23.pdf)
-  are much much clearer, making assembly a breeze.
-
-* The kinT is a good starting point for your own project:
-
-   * kinT was designed in the open source [KiCad](https://kicad.org/)
-     program, meaning you do not need any license subscriptions.
-
-   * The clear silkscreen and schematic make development and debugging easier.
-
-* On the kinT, the Teensy no longer has to be soldered onto the board upside down.
-
-* On the kinT, the FPC connectors have been moved for less strain on the cables.
-
-* The kinT makes possible lower-cost builds: if you don’t need the scroll lock,
-  num lock and keypad LEDs, you can use a Teensy LC for merely 11 USD.
 
 ## Compatibility: which Teensy to use?
 
 The kinT keyboard controller was made for the Teensy 3.x and 4.x series of
 devices, which are ARM based.
 
-The older Atmel based Teensy++ 2.0 are also supported, but they require cutting
-one set of solder jumpers and closing a second set, to account for clashing pin
-assignments.
 
-Which Teensy should you buy for your build? Here are a few considerations:
-
-* I have been using the Teensy 4.1 for many months without problems.
-
-* I used the Teensy 3.6 for multiple years, and many others are happy with it,
-  too.
-
-* The Teensy++ 2.0 used to be the most popular choice, in part because it was
-  the only option with the the predecessor keyboard controller. The [Teensy++
-  2.0 is discontinued](https://www.pjrc.com/store/teensypp.html), so I would no
-  longer recommend it for new keyboard builds.
-
-* If you are an advanced user of the QMK firmware, note that despite QMK working
-  on the Teensy 3.6, [some features are not yet
-  ported/working](https://github.com/bgould/kint-qt/issues/10). As QMK was
-  originally made for AVR micro controllers, you will likely find best overall
-  QMK feature availability with the older Teensy++ 2.0.
-
-### Reference: full Teensy compatibility chart
-
-TODO: add power consumption as a column. relevant for using the keyboard with a laptop on the go
-
-| teensy         | LEDs | Cost   | input latency | clock speed | MCU         | QMK                                                                   |
-|----------------|------|--------|---------------|-------------|-------------|-----------------------------------------------------------------------|
-| teensy++ 2.0   | yes  | $24.00 | 3.27ms        | 16 MHz AVR  | AT90USB1286 | 0.13.17 or newer                                                      |
-| ~~teensy 3.0~~ | no   |        |               | 48 MHz M4   | MK20DX128   | untested                                                              |
-| ~~teensy 3.1~~ | no   |        |               |             | MK20DX256   | untested                                                              |
-| teensy LC      | no   | $11.65 | ?             | 48 MHz M0+  |             | [development version](https://github.com/qmk/qmk_firmware/pull/17301) |
-| teensy 3.2     | no   | $19.80 | ?             | 72 MHz M4   |             | unlikely ([interest?](https://github.com/bgould/kint-qt/issues/2)) |
-| teensy 3.5     | yes  | $24.25 | ?             | 120 MHz M4F | MK64FX      | unlikely ([interest?](https://github.com/bgould/kint-qt/issues/3)) |
-| teensy 3.6     | yes  | $29.25 | 1.97ms        | 180 MHz M4F | MK66FX      | 0.14.0 or newer                                                       |
-| teensy 4.0     | no   | $19.95 | 0.9ms         | 600 MHz M7  | MIMXRT1062  | 0.14.0 or newer                                                       |
-| teensy 4.1     | yes  | $26.85 | 0.9ms         | 600 MHz M7  | MIMXRT1062  | 0.14.0 or newer                                                       |
-
-See [this blog post for more details on keyboard input
-latency](https://michael.stapelberg.ch/posts/2021-05-08-keyboard-input-latency-qmk-kinesis/).
 
 ## Buying the board and components (Bill of materials)
 
