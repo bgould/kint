@@ -1,19 +1,21 @@
 
 <img src="https://github.com/bgould/kint-qt/raw/main/kb2040_kinesis_controller.jpg" width="362" height="289" align="right">
 
-The kinT keyboard controller is a replacement for your Kinesis Advantage or
+The kinT-QT keyboard controller is a replacement for your Kinesis Advantage or
 Advantage 2 ergonomic keyboards.
 
-You can use it for example…
+It is based on the [kin-T controller](https://github.com/kinx-project/kint)
+designed by Michael Stapelberg, which is based on the line of Teensy
+microcontrollers from PJRC.
 
-* to build or modify your own keyboard
-* to [work around bugs in the standard controller](https://michael.stapelberg.ch/posts/2013-03-21-kinesis_custom_controller/)
-* because you prefer to run open source software such as the [QMK firmware](https://docs.qmk.fm/), even on your keyboard
+kinT-QT is designed to be microcontroller-agnostic by wiring the matrix and
+indicator LEDs to a pair of MCP23017 port expanders that are accessible via I2C,
+so all of the functionality of the keyboard can be controlled with 2 digital pins.
 
-See also:
+The board has footprints for [Adafruit Feather](https://www.adafruit.com/category/946)
+boards, as well as for [Adafruit KB2040](https://adafru.it/5302) and other Pro Micro
+compatible boards.
 
-* [My blog post introducing the kinT keyboard controller](https://michael.stapelberg.ch/posts/2020-07-09-kint-kinesis-keyboard-controller/)
-* [My twitch stream recording introducing the kinT keyboard controller](https://youtu.be/I0kwQbnhlfk)
 
 ## Quick overview
 
