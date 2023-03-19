@@ -16,8 +16,8 @@ with 2 digital pins.
 The PCB has footprints for [Adafruit Feather](https://www.adafruit.com/category/946)
 boards, as well as for [Adafruit KB2040](https://adafru.it/5302) and other Pro Micro
 compatibles. Connections from the microcontroller footprint to the I2C bus and
-USB cable are configurable by solder jumpers, and plenty of extra prototyping space
-is provided to allow for maximum flexibility.
+USB cable are configurable by solder jumpers, and extra prototyping space is provided
+to allow for maximum flexibility.
 
 ## Quick overview
 
@@ -50,7 +50,7 @@ The above firmware has been tested with the following microcontroller developmen
 
 ## Compatibility
 
-The kinT keyboard controller was made for the Kinesis Advantage or Advantage 2
+The kint-QT keyboard controller was made for the Kinesis Advantage or Advantage 2
 series.
 
 The kinT keyboard controller is not compatible with the newer Kinesis Advantage
@@ -194,52 +194,6 @@ the same time :-). I want to add an edited and higher-quality video, too.
 1. For the older Advantage (KB500) keyboard, populate pin headers J5, J6 and
    solder their pins.
 
-### Soldering instructions for the Teensy++ 2.0
-
-Follow the [instructions for the Teensy 3.x or 4.x
-above](#soldering-instructions-for-the-teensy-3x-or-4x), and then:
-
-1. Using a small knife such as a hobby knife, cut the traces between the pads
-   of jumpers JP4, JP5, and JP6. This will disconnect pin 7, pin 15 and pin 16.
-
-   * If you haven't cut traces like this before, SparkFun has a [brief
-     illustrated tutorial][jumper-tut] about working with jumpers that is a
-     good reference.
-
-2. Close the solder jumpers JP1, JP2, JP3. These will remap pin 7, pin 15 and
-   pin 16 onto pins that can be used with the Teensy++ 2.0.
-
-If you are [using socket headers](#using-socket-headers) so that the Teensy is
-removable, you can later upgrade to a Teensy 3.x or 4.x by desoldering JP1,
-JP2, and JP3, and reclosing the jumpers JP4, JP5, and JP6.
-
-[jumper-tut]: https://learn.sparkfun.com/tutorials/how-to-work-with-jumper-pads-and-pcb-traces/what-is-a-jumper
-
-### Using socket headers
-
-Due to the space for the USB cable in the back, there's not enough room in the
-case for a standard socket header, but there are low-profile pin headers that
-do fit. [These square-pin socket headers][short-sockets] and [pins][short-pins]
-with 0.180" (4.57mm) insulation height have been verified to fit in the KB500,
-and will probably fit the KB600 as well. Round "Swiss-style" headers may also
-work, but make sure to get the appropriate matching pins for whatever socket
-you order.
-
-To build with socket headers, follow the [standard instructions
-above](#soldering-instructions-for-the-teensy-3x-or-4x), but instead of the
-steps involving soldering the pin headers, do the following:
-
-1. Turn the board around and solder **3 rows of socket headers** (top, bottom,
-   vertical) in the Teensy holes on the kinT board.
-
-1. Place and solder the corresponding **3 rows of pin headers** (top, bottom,
-   vertical) on the Teensy itself.
-
-1. Insert the Teensy into the sockets.
-
-[short-sockets]: https://octopart.com/slw-124-01-t-s-samtec-292526?r=sp
-[short-pins]: https://octopart.com/tsw-124-23-g-s-samtec-274217?r=sp
-
 ## Installing the firmware
 
 You can use the QMK Configurator online build tool to compile the QMK firmware for
@@ -263,49 +217,3 @@ Started](https://docs.qmk.fm/#/?id=get-started) and refer to the [full Teensy
 compatibility chart](#reference-full-teensy-compatibility-chart) above to find
 the QMK branch to work with.
 
-## Debugging / Troubleshooting
-
-### General technique: highlight connections in KiCad
-
-1. Install [KiCad](https://kicad.org/) (free and open source)
-1. Clone https://github.com/bgould/kint-qt/ and open `kicad/kint.pro` in KiCad
-1. Select `Tools` → `Edit PCB`
-1. Select `View` → `Flip Board View`, because the front side of kinT contains the LEDs, the back side contains the connectors.
-1. Select `Highlight Net`, the second icon from the top in the right icon bar.
-   In KiCad 6, the icon is gone. Instead, hold the `Ctrl` key while clicking on the net.
-1. Click on the pin of interest. In the bottom left, you’ll see the Net Name (e.g. `COL_3`), and KiCad will highlight all connected traces.
-
-### Issue: LEDs not working
-
-See also [Example issue #13](https://github.com/bgould/kint-qt/issues/13) for
-a full debugging walk-through.
-
-* Check the orientation of your LEDs, as they are directional parts.
-
-   * The marker printed on the kinT board marks the LED cathode, which is
-     labeled as C on the kinT. For details about the marker, refer to the LED
-     datasheet, e.g. the [Kingbright APT3216QBC/D data
-     sheet](https://www.kingbrightusa.com/images/catalog/SPEC/APT3216QBC-D.pdf)
-     if you are using the LED from the [Bill of Materials
-     (BOM)](#buying-the-board-and-components-bill-of-materials).
-
-* If your Teensy is not soldered yet (or removed from its socket), you can test your LEDs with a multimeter:
-   * switch your multimeter to diode test mode
-   * place the black probe (`COM`) on e.g. Teensy pin 12 (`LED_CAPS_LOCK`)
-   * place the red probe on the anode (A) of your LED
-   * the LED should light up now, or it might be defective:
-   ![IMG_0755](https://user-images.githubusercontent.com/55506/91949423-6811c780-ed00-11ea-8393-5f79e4586825.JPG)
-
-* Measure that the LED pins behave as expected, e.g. Teensy pin 12 for `LED_CAPS_LOCK`:
-   * you should measure 3.3V when the LED is turned off
-   * you should measure 0V when the LED is turned on
-   ![schematic_000](https://user-images.githubusercontent.com/55506/91944490-7232c680-ecfe-11ea-90e4-071a66173f0d.jpg)
-
-* Check that you soldered in the vertical pin header, which supplies 3.3V to the LEDs:
-
-   ![IMG_0759](https://user-images.githubusercontent.com/55506/91976333-0f065b80-ed21-11ea-81dc-477edfb2e9f0.jpg)
-
-### Issue: Keys not working
-
-See also [Example issue #16](https://github.com/bgould/kint-qt/issues/16) for
-a full debugging walk-through.
