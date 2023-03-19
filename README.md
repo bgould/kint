@@ -53,27 +53,20 @@ The above firmware has been tested with the following microcontroller developmen
 The kint-QT keyboard controller was made for the Kinesis Advantage or Advantage 2
 series.
 
-The kinT keyboard controller is not compatible with the newer Kinesis Advantage
+The kinT-QT keyboard controller is not compatible with the newer Kinesis Advantage
 360 series, introduced in 2022, because the 360 is a split keyboard that uses an
 entirely different form factor for its electronics ([Kinesis 360 teardown
 photos](https://photos.app.goo.gl/BwgzHgaTz1RKBjqc6)).
 
-The kinT keyboard controller is also not compatible with **very old Advantage**
+The kinT-QT keyboard controller is also not compatible with **very old Advantage**
 keyboards, where the left and right keywell circuit boards plug directly into
 the controller. See [issue #42](https://github.com/kinx-project/kint/issues/42)
 for details and pictures.
 
-## Building your own kinT keyboard controller
+## Building your own kinT-QT keyboard controller
 
 1. Follow [“Buying the board and components (Bill of
-   materials)”](https://github.com/bgould/kint-qt#buying-the-board-and-components-bill-of-materials). When
-   ordering from OSH Park (board) and Digi-Key (components), you’ll get the
-   minimum quantity of 3 boards for 72 USD (24 USD per board), and one set of
-   components for 49 USD.
-
-   * If you have any special requirements regarding which Teensy microcontroller
-     to use, this is the step where you would replace the Teensy 3.6 with your
-     choice.
+   materials)”](https://github.com/bgould/kint-qt#buying-the-board-and-components-bill-of-materials).
 
 1. Wait for the components to arrive. When ordering from big shops like Digi-Key
    or Mouser, this typically takes 2 days to many places in the world.
@@ -88,23 +81,43 @@ for details and pictures.
 
 1. [Install the firmware](https://github.com/bgould/kint-qt#installing-the-firmware)
 
-## Installing the kinT replacement controller in your Kinesis keyboard
+## Installing the kinT-QT replacement controller in your Kinesis keyboard
 
-The easiest way is to remove the existing cable from the Kinesis keyboard, and
-use a regular USB cable instead (going through the existing hole in the case, no
-mod required).
+There are six Phillips #2 screws in the underside of the keyboard. Remove these
+and open up the keyboard like a clam shell from the bottom. Detach the USB cable
+from the Kinesis controller and remove the center screw. Carefully unlatch each 
+of the white connectors and slide out the FFC ribbons. Remove the stock controller
+while taking care not to snag or damage the ribbon cables. Slide the new board
+into place, re-attach the center screw, and then re-seat all of the ribbon cables
+and latch the connectors.
 
-If you want to keep using the existing Kinesis cable, you could build the [kinX
-open hardware
-hub](https://michael.stapelberg.ch/posts/2018-04-17-kinx-usb-hub/), which uses a
-compatible connector.
+<table border="0" width="100%">
+<tr>
+<td width="33%">
+<img src="kb600_controller_original.jpg">
+KB600 with stock controller still installed and USB cable connected
+</td>
+<td width="33%">
+<img src="kb600_controller_removed.jpg">
+KB600 with stock controller removed and USB cable disconnected
+</td>
+<td width="33%">
+<img src="kb600_replaced_controller.jpg">
+KB600 with kinT-QT installed and USB cable connected
+</td>
+</tr>
+</table>
 
-Another way is to cut open a USB cable and solder it onto the matching pins of
-the Kinesis cable.  You can confirm the pinout in the hardware design files for
-the kinX hub.
+If you are going to continue to use the stock USB cable, plug it into the
+connector at the top of the kinT-QT board. Carefully close the clam shell back
+up, keeping an eye on the USB cable to make sure it doesn't get caught on one
+of the ribbon cables. Replace the six screws (do not force them or tighten too
+hard because they threaded into the plastic case).
 
+Another way is to remove the existing cable from the Kinesis keyboard, and use
+a regular USB cable instead (going through the existing hole in the case).
 
-## Compatibility: which Teensy to use?
+## Compatibility: which microcontroller to use?
 
 The kinT keyboard controller was made for the Teensy 3.x and 4.x series of
 devices, which are ARM based.
