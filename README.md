@@ -39,6 +39,15 @@ schematic
 </tr>
 </table>
 
+Primary firmware: https://github.com/bgould/keyboard-firmware/tree/main/devices/kinx
+
+The above firmware has been tested with the following microcontroller development boards:
+ * Adafruit Feather M0 Express
+ * Adafruit Feather M4 Express
+ * Adafruit Feather nRF52840 Express
+ * Adafruit Feather RP2040
+ * Adafruit KB2040
+
 ## Compatibility
 
 The kinT keyboard controller was made for the Kinesis Advantage or Advantage 2
