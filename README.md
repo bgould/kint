@@ -128,9 +128,9 @@ a regular USB cable instead (going through the existing hole in the case).
 The kinT keyboard controller was made for the Teensy 3.x and 4.x series of
 devices, which are ARM based.
 
-
-
 ## Buying the board and components (Bill of materials)
+
+<!--
 
 To buy the board, you can:
 
@@ -145,16 +145,20 @@ To buy the components, check out the [kinT BOM in the Octopart BOM
 tool](https://octopart.com/bom-tool/4AnOAR3f), from where you can conveniently
 buy all components via Digi-Key or Mouser.
 
-For your convenience, this is the full BOM (links go to Octopart):
+-->
+
+For your convenience, here is an example BOM list (links go to Digi-Key):
 
 | Part Number                                                                               | Count | Cost   | Description               | Note                                               |
 |-------------------------------------------------------------------------------------------|-------|--------|---------------------------|----------------------------------------------------|
-| [Teensy 3.6](https://octopart.com/dev-14057-sparkfun-76356774?r=sp)                       | 1     | $32.5  |                           | [your choice!](#compatibility-which-teensy-to-use) |
-| [Würth 61301011121](https://octopart.com/61301011121-w%C3%BCrth+elektronik-18818159?r=sp) | 8     | $0.89  | 10 position 2.54mm header | 6 for Teensy<br>2 for KB500<br>0 for KB600         |
-| [Molex 39-53-2135](https://octopart.com/39-53-2135-molex-7670149?r=sp)                    | 6     | $1.24  | 13 position FPC connector | 4 for KB500<br>6 for KB600                         |
-| [Kingbright APT3216QBC/D](https://octopart.com/apt3216qbc%2Fd-kingbright-5355642?r=sp)    | 4     | $0.47  | 1206 SMD LED              | blue 470nm<br>chose your color!                    |
-| [Vishay CRCW120610K0FKEAC](https://octopart.com/crcw120610k0fkeac-vishay-20811529)        | 4     | $0.10  | 1206 10K resistor         | value determines LED brightness                    |
-|                                                                                           |       | $48.45 |                           |                                                    |
+| [Adafruit KB2040](https://www.digikey.com/en/products/detail/adafruit-industries-llc/5302/15794634?s=N4IgTCBcDaINYCMwAYAsyQF0C%2BQ) | 1 | $8.95 | | [your choice!](#compatibility-which-microcontroller-to-use) |
+| [JST B9B-PH-K-S(LF)(SN)](https://www.digikey.com/en/products/detail/jst-sales-america-inc/B9B-PH-K-S-LF-SN/926618) | 1 | $0.48 | Connector 9 position 0.079" (2.00mm) | Connector for USB cable |
+| [Molex 39-53-2135](https://www.digikey.com/en/products/detail/molex/0039532135/3160262) | 6 | $1.41 | 13 position FPC connector | 4 for KB500, 6 for KB600 |
+| [Microchip MCP23017-E/SP](https://www.digikey.com/en/products/detail/microchip-technology/MCP23017-E-SP/894272) | 2 | $1.79 | IC XPNDR 1.7MHZ I2C 28SDIP | |
+| [Adam Tech ICS-328-T](https://www.digikey.com/en/products/detail/adam-tech/ICS-328-T/9832859) | 2 | $0.27 | IC SOCKET, DIP, 28P 2.54MM PITCH | |
+| [Kingbright APTD3216LQBC/D](https://www.digikey.com/en/products/detail/kingbright/APTD3216LQBC-D/7043082) | 4 | $0.50  | 1206 SMD LED | choose your color! |
+| [Stackpole RMCF1206JT4K70](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF1206JT4K70/1753837) | 6 | $0.10 | 1206 4.7K resistor | 2 for I2C pullups, 4 for LEDs |
+|                                                                                                                         |   | $24.61  |                    |                               |
 
 Note: with all parts (except for the Molex 39-53-2135 FPC connector), there is
 no need to get the specific versions from the BOM above — if you have LEDs,
