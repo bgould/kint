@@ -39,9 +39,6 @@ schematic
 </tr>
 </table>
 
-Primary firmware: https://github.com/bgould/keyboard-firmware/tree/main/devices/kinx
-
-
 ## Compatibility
 
 ### Keyboards
@@ -147,7 +144,11 @@ buy all components via Digi-Key or Mouser.
 
 -->
 
-For your convenience, here is an example BOM list (links go to Digi-Key):
+For your convenience, here is an example BOM list to build the controller using
+Adafruit KB2040 for the microcontroller directly soldered using the castellated
+pads (links go to Digi-Key). Your BOM might vary depending on the configuration
+of your board, such as if you choose a different microcontroller board or would
+like to use headers/sockets instead of soldering it directly to the board. 
 
 | Part Number                                                                               | Count | Cost   | Description               | Note                                               |
 |-------------------------------------------------------------------------------------------|-------|--------|---------------------------|----------------------------------------------------|
@@ -160,31 +161,24 @@ For your convenience, here is an example BOM list (links go to Digi-Key):
 | [Stackpole RMCF1206JT4K70](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF1206JT4K70/1753837) | 6 | $0.10 | 1206 4.7K resistor | 2 for I2C pullups, 4 for LEDs |
 |                                                                                                                         |   | $24.61  |                    |                               |
 
-Note: with all parts (except for the Molex 39-53-2135 FPC connector), there is
-no need to get the specific versions from the BOM above — if you have LEDs,
-resistors and pin headers still lying around from other projects, feel free to
-re-use them!
+It is fine if you prefer to use different options for the LEDs and the 4 associated
+resistors. Please note that 2 of the resistors listed above are pull-ups for the I2C
+bus and not for LEDs.
 
 ## Soldering
 
-All the soldering connections on the kinT keyboard controller are easy to make,
+All the soldering connections on the kinT-QT keyboard controller are easy to make,
 so the whole assembly can be done at home, with a cheap soldering iron and basic
-electronic hobby equipment. A build takes about 1 hour of time and involves a
-little over 100 soldering connections.
+electronic hobby equipment. 
 
-For example, I used the [Miniware TS100 soldering
-iron](https://hackaday.com/2017/07/24/review-ts100-soldering-iron/), which can
-be found for 50-60 EUR or USD.
+For example, I used the [Pinecil - Smart Mini Portable Soldering
+Iron](https://pine64.com/product/pinecil-smart-mini-portable-soldering-iron/),
+which can be found for around $30-40 USD combined with a power supply.
 
 If you’re new to soldering, check out [this excellent soldering reference card
 from adafruit](https://twitter.com/zekjur/status/952596267884056576).
 
-You can also [watch me solder a kinT keyboard controller on live
-stream](https://youtu.be/I0kwQbnhlfk?t=5880) (from 1:38:00 to 3:33:53). The
-process can be done in under an hour if you’re not talking to a live audience at
-the same time :-). I want to add an edited and higher-quality video, too.
-
-### Soldering instructions for the Teensy 3.x or 4.x
+### Soldering instructions
 
 1. Populate the FPC connectors J2, J3, J4, J7 (all keyboards) and J1, J8 for the
    newer Advantage 2 (KB600). Turn the board around and solder all their pins.
@@ -199,8 +193,9 @@ the same time :-). I want to add an edited and higher-quality video, too.
      (BOM)](#buying-the-board-and-components-bill-of-materials).
 
    * If you’re new to SMD (Surface Mount Devices) soldering, check out [How to
-     Hand Solder SMD](http://www.davidhaillant.com/smd-soldering/), which
-     explains what I call the “One pad at a time” method.
+     Hand Solder SMD](http://www.davidhaillant.com/smd-soldering/).
+
+1. Solder R5 and R6 to function as pull-up resistors for the I2C bus.
 
 1. Turn the board around and place (but don’t solder) **3 rows of pin headers**
    (top, bottom, vertical) in the Teensy holes.
@@ -219,24 +214,4 @@ the same time :-). I want to add an edited and higher-quality video, too.
 
 ## Installing the firmware
 
-You can use the QMK Configurator online build tool to compile the QMK firmware for
-your kinT keyboard controller, or customize your layout.
-
-Alternatively, you can install the pre-built, tested firmware file (default QMK
-keymap and settings) we offer, for example to test whether issues are related to
-your self-compiled firmware.
-
-| Teensy           | QMK Configurator                                                                                                                                         | pre-built, tested firmware                                                                                                              |
-|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Teensy++ 2.0     | [QMK Configurator (kint2pp)](https://config.qmk.fm/#/kinesis/kint2pp/LAYOUT)                                                                             | [kinesis_kint2pp_default.hex](https://github.com/bgould/kint-qt/blob/main/default-firmware/kinesis_kint2pp_default.hex) (2020-07-09) |
-| Teensy 3.6       | [QMK Configurator (kint36)](https://config.qmk.fm/#/kinesis/kint36/LAYOUT)                                                                               | [kinesis_kint36_default.hex](https://github.com/bgould/kint-qt/blob/main/default-firmware/kinesis_kint36_default.hex) (2020-07-09)   |
-| Teensy 4.0 / 4.1 | <s>[QMK Configurator (kint41)](https://config.qmk.fm/#/kinesis/kint41/LAYOUT)</s> (currently [broken](https://github.com/qmk/qmk_firmware/issues/16440)) | [kinesis_kint41_default.hex](https://github.com/bgould/kint-qt/blob/main/default-firmware/kinesis_kint41_default.hex) (QMK 0.17.9)   |
-
-You can install these .hex files with the [Teensy
-Loader](https://www.pjrc.com/teensy/loader.html).
-
-To compile your own firmware, see [QMK: Get
-Started](https://docs.qmk.fm/#/?id=get-started) and refer to the [full Teensy
-compatibility chart](#reference-full-teensy-compatibility-chart) above to find
-the QMK branch to work with.
-
+Primary firmware: https://github.com/bgould/keyboard-firmware/tree/main/devices/kinx
