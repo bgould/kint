@@ -66,6 +66,10 @@ The above firmware has been tested with the following microcontroller developmen
  * Adafruit Feather RP2040
  * Adafruit KB2040
 
+### Configurations
+
+The kint-QT controller is designed to
+
 ## Building your own kinT-QT keyboard controller
 
 1. Follow [“Buying the board and components (Bill of
@@ -120,11 +124,6 @@ hard because they threaded into the plastic case).
 Another way is to remove the existing cable from the Kinesis keyboard, and use
 a regular USB cable instead (going through the existing hole in the case).
 
-## Compatibility: which microcontroller to use?
-
-The kinT keyboard controller was made for the Teensy 3.x and 4.x series of
-devices, which are ARM based.
-
 ## Buying the board and components (Bill of materials)
 
 <!--
@@ -152,7 +151,7 @@ like to use headers/sockets instead of soldering it directly to the board.
 
 | Part Number                                                                               | Count | Cost   | Description               | Note                                               |
 |-------------------------------------------------------------------------------------------|-------|--------|---------------------------|----------------------------------------------------|
-| [Adafruit KB2040](https://www.digikey.com/en/products/detail/adafruit-industries-llc/5302/15794634?s=N4IgTCBcDaINYCMwAYAsyQF0C%2BQ) | 1 | $8.95 | | [your choice!](#compatibility-which-microcontroller-to-use) |
+| [Adafruit KB2040](https://www.digikey.com/en/products/detail/adafruit-industries-llc/5302/15794634?s=N4IgTCBcDaINYCMwAYAsyQF0C%2BQ) | 1 | $8.95 | | [your choice!](#microcontrollers--development-boards) |
 | [JST B9B-PH-K-S(LF)(SN)](https://www.digikey.com/en/products/detail/jst-sales-america-inc/B9B-PH-K-S-LF-SN/926618) | 1 | $0.48 | Connector 9 position 0.079" (2.00mm) | Connector for USB cable |
 | [Molex 39-53-2135](https://www.digikey.com/en/products/detail/molex/0039532135/3160262) | 6 | $1.41 | 13 position FPC connector | 4 for KB500, 6 for KB600 |
 | [Microchip MCP23017-E/SP](https://www.digikey.com/en/products/detail/microchip-technology/MCP23017-E-SP/894272) | 2 | $1.79 | IC XPNDR 1.7MHZ I2C 28SDIP | |
